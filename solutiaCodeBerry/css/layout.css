@@ -1,0 +1,63 @@
+/**
+ * PREZENTARE GENERALĂ
+ *
+ * Acest fișier gestionează schema (layout) website-ului. În loc să seteze
+ * una câte una componentele layout-ului, creăm un sistem distinct
+ * care are doar un scop—de a spune fiecărui element
+ * ce dimensiuni trebuie să aibă și unde trebuie să apară.
+ *
+ * Class-ele declarate aici pot fi atribuite oricărui container
+ * pentru a le da dimensiunea corectă și pentru a se comporta cum trebuie.
+ */
+
+
+/**
+ * CUPRINS
+ *
+ * LAYOUT
+ * Elemente.................Regula dimensiunii container-ilor.
+ * Modifiers..............Regula care modifică layout-ul, de ex float-uri.
+ *
+ * HELPERI
+ * Clearfix...............Un class care poate fi atribuit floated container-ilor.
+ */
+
+
+
+
+
+/*------------------------------------*\
+  #LAYOUT
+\*------------------------------------*/
+
+/**
+ * 1. Dacă trebuie să float-ezi un element, aceste class-e te vor ajuta.
+ * Nu uita să atribui class-a .clearfix
+ * din secțiunea HELPERI despre container.
+ */
+
+.layout__item--full-width           { width: 100%; }
+
+.layout__item--50-percent           { width: 50%; }
+
+
+.layout__item--full-height-w-footer { min-height: calc(100vh - 11.1111vh); }
+
+
+.layout__item--floated-left  { float: left; } /* [1] */
+
+.layout__item--floated-right { float: right; }/* [1] */
+
+
+
+
+
+/*------------------------------------*\
+  #HELPERI
+\*------------------------------------*/
+
+.clearfix:after {
+  content:  "";
+  display:  table;
+  clear:    both;
+}

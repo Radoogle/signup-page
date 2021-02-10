@@ -1,0 +1,293 @@
+/**
+ * PREZENTARE GENERALĂ
+ *
+ * Acest fișier descrie componentele care alcătuiesc site-ul.
+ * De la layout-ul interior până la culoarea fontului etc.
+ *
+ * L-ai mai văzut, dar acum, gândirea BEM (Block–Element–Modifier)
+ * este și mai evidentă în acest cod. Dacă auzi de BEM
+ * pentru prima dată, îți recomandăm să citești secțiunea următoare
+ * în CSS guidelines: https://cssguidelin.es/#bem-like-naming al lui Harry Roberts.
+ */
+
+
+/**
+ * CUPRINS
+ *
+ * 1. BUTOANE
+ *
+ * 2. PROMO
+ *
+ * 3. FORMULAR DE ÎNREGISTRARE/LOGARE
+ *
+ * 4. FOOTER
+ */
+
+
+
+
+
+/*------------------------------------*\
+  #BUTOANE
+\*------------------------------------*/
+
+/**
+ * 1. Înlăturăm border-ul pentru a nu ne incomoda când facem padding-ul.
+ * De asemenea, nu este necesar să punem border-uri pe un întreg buton. :)
+ *
+ */
+
+ .button {
+  display:        inline-block;
+  border:         .2222vh solid;
+  border-radius:  24px;
+  text-align:     center;
+}
+
+  .button--primary-solid {
+    border:           0; /* [1] */
+    background-color: #6200ea;
+    color:            #ffffff;
+  }
+
+  .button--primary-solid:visited { color: #ffffff; }
+
+  .button--primary-hollow {
+    border-color:     #6200ea;
+    background-color: transparent;
+    color:            #6200ea;
+  }
+
+  .button--primary-hollow:visited { color: #6200ea; }
+
+
+
+
+
+/*------------------------------------*\
+  #PROMO
+\*------------------------------------*/
+
+/**
+ * 1. Alegem proprietatea position pentru layout-ul componentei.
+ * Am poziționat logo-urile și blurb-urile (texte promo și pictograme)
+ * în funcție de relative container. Dacă vrei să citești mai multe despre
+ * această tehnică, citește modulul nostru cu titlul  „Totul la loc”.
+ *
+ * 2. Cu această metodă poți centra lucruri cu ușurință.
+ * Găsești aici mai multe informații despre asta:
+ * https://www.w3schools.com/howto/howto_css_center-vertical.asp
+ *
+ * 3. Această declarație width trebuie să se asigure că textul blurb-urilor
+ * nu se frânge într-o linie, din întâmplare. Media query există
+ * pentru a se ocupa de asta și în cazul ecranelor mai mici.
+ *
+ * 4. Facem iconurile circulare folosind aceleași serii de seturi de reguli
+ * așa cum am făcut când am programat pagina Contact.
+ */
+
+.promo {
+  position:         relative; /* [1] */
+  background-color: #6200ea;
+}
+
+  .promo__logo {
+    position: absolute; /* [1] */
+    top:      1.6667vh;
+    left:     1.875vw;
+  }
+
+  .promo__blurb-container {
+    position:  absolute; /* [1] */
+    top:       50%; /* [2] */
+    left:      50%; /* [2] */
+    transform: translate(-50%, -50%); /* [2] */
+    width:     25.6125vw; /* [3] */
+  }
+
+  @media only screen and (max-width: 1365px) {
+    .promo__blurb-container {
+      width: 33vw; /* [3] */
+    }
+  }
+
+  .blurb { margin-bottom: 6.6667vh; }
+
+  .blurb:last-child { margin-bottom: 0; }
+
+    .blurb__icon-wrapper,
+    .blurb__text {
+      display: inline-block;
+    }
+
+    .blurb__icon-wrapper { /* [4] */
+      width:            2.5vw;
+      height:           2.5vw;
+      padding:          .625vw;
+      border-radius:    50%;
+      margin-right:     1.25vw;
+      background-color: #ffffff;
+      text-align:       center;
+    }
+
+      .blurb__icon { /* [4] */
+        color:     #6200ea;
+        font-size: 2.2222vh;
+      }
+
+    .blurb__text {
+      margin:    0;
+      color:     #ffffff;
+      font-size: 3.3333vh;
+    }
+
+
+
+
+
+/*------------------------------------*\
+#FORMULAR DE ÎNREGISTRARE/LOGARE
+\*------------------------------------*/
+
+/**
+ * 1. Vom rezolva problema centrării cardului
+ * și aici, cu ajutorul trucului absolute+relative.
+ *
+ * 2. La acest set de reguli se adaugă un pseudo element cu o singură
+ * sarcină pe website: afișarea fundalului monocrom în spatele form-ului.
+ *
+ * 3. Această declarație de lățime și înălțime trebuie să poată afișa
+ * cardul cu proporțiile design-ului original. În cazul ecranelor mai mici,
+ * dezactivăm înălțimea.
+ *
+ * 4. Implicit,  input-urile sunt inline element. Înainte de a începe prelucrarea
+ * valorilor margin-urilor, padding-urilor etc., trebuie să le transformăm în
+ * elemente block sau inline-block.
+ *
+ * 5. Mai întâi, vom trasa border-ul nelipsit de valoare zero.
+ *
+ * 6. Îi dăm input-ului un border jos, invizibil în mod implicit.
+ * Îl vom folosi mai târziu pentru ca pe focus să apară o bară mov.
+ * Border-ul este invizibil implicit așadar trebuie să-i schimbăm doar culoarea,
+ * și astfel interfața nu sare așa cum s-ar întâmpla dacă am da focus-ului
+ * border-ul.
+ *
+ * 7. Acest set de reguli formatează butoanele de trimitere prin adăugare la
+ * regulile .button, .button--primary-solid și .button--primary-hollow.
+ *
+ */
+
+.signup { position: relative; } /* [1] */
+
+  .signup::before { /* [2] */
+    content:          '';
+    position:         absolute;
+    top:              0;
+    left:             0;
+    width:            100%;
+    height:           100%;
+    background-image: url('../assets/bailey-zindel-396398-unsplash.jpg');
+    background-size:  cover;
+    filter:           grayscale(100%);
+  }
+
+  .signup__form-container {
+    position:         absolute; /* [1] */
+    top:              50%; /* [1] */
+    left:             50%; /* [1] */
+    transform:        translate(-50%, -50%); /* [1] */
+    width:            33.75vw; /* [3] */
+    height:           33.75vw; /* [3] */
+    padding:          6.6667vh 3.75vw 7.2222vh;
+    border-radius:    .9375vw;
+    background-color: #ffffff;
+  }
+
+  @media only screen and (max-width: 1365px) {
+    .signup__form-container {
+      height: auto; /* [3] */
+    }
+  }
+
+    .signup__cta { font-size: 4.4444vh; }
+
+    .signup__input-field {
+      display:          block; /* [4] */
+      width:            100%;
+      padding:          1.7778vh 0 1.4444vh 1.5vw;
+      border:           0; /* [5] */
+      border-bottom:    0.3333vh solid; /* [6] */
+      border-color:     transparent; /* [6] */
+      margin-bottom:    1.6667vh;
+      background-color: #f4f3f5;
+      outline:          none;
+    }
+
+    .signup__input-field:nth-of-type(2) { margin-bottom: 1.1111vh; }
+
+    .signup__input-field:focus { border-bottom-color: #6200ea; }
+
+      .signup__input-field::placeholder {
+        font-weight: bold;
+        opacity:     .25;
+      }
+
+    .signup__forgotten-password-container { text-align: right; }
+
+      .signup__forgotten-password-link         { color: #6200ea; }
+
+      .signup__forgotten-password-link:visited { color: #6200ea; }
+
+    .signup__submit--signup,
+    .signup__submit--login { /* [7] */
+      width:         100%;
+      padding:       2vh 0;
+      margin-bottom: 1.6667vh;
+    }
+
+    .signup__submit--login {
+      padding:        1.7777vh 0;
+      margin-bottom:  0;
+    }
+
+    .signup__forgotten-password-link,
+    .signup__submit--signup,
+    .signup__submit--login { /* [7] */
+      font-size:      1.3333vh;
+      font-weight:    bold;
+      text-transform: uppercase;
+      letter-spacing: .15vw;
+    }
+
+    .signup__cta,
+    .signup__forgotten-password-container {
+      margin-bottom: 3.3333vh;
+    }
+
+
+
+
+
+/*------------------------------------*\
+  #FOOTER
+\*------------------------------------*/
+
+.footer {
+  height:           11.1111vh;
+  padding:          4.7778vh 0;
+  background-color: #211138;
+  text-align:       center;
+}
+
+  .footer__copyright {
+    color:          #b2acba;
+    font-size:      1.3333vh;
+    font-weight:    bold;
+    text-transform: uppercase;
+    letter-spacing: .15vw;
+  }
+
+  .footer__brand-name,
+  .footer__student-name {
+    color: #6200ea;
+  }

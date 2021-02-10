@@ -1,0 +1,85 @@
+/**
+ * PREZENTARE GENERALĂ
+ *
+ * Proiectul se împarte în foi de stil separate:
+ *
+ * normalize.min.css.....CSS reset, astfel browserele vor porni din aceeași stare.
+ * base.css..............Reguli și instrumente ajutătoare globale.
+ * layout.css............Reguli CSS care controlează layout-ul website-ului.
+ * components.css........CSS-ul componentelor care alcătuiesc site-ul.
+ */
+
+
+/**
+ * CUPRINS
+ *
+ * SETĂRI
+ * Box-sizing...........Setările globale implicite ale website-ului nostru.
+ * Base font-size.......Declarația dimensiunii fontului de bază.
+ * Margins..............Valorile globale ale top și bottom margin-uri.
+ * Anchor...............Setările implicite ale link-urilorThe default settings of links.
+ *
+ * TIPOGRAFIE
+ * Antete............Stiluri tipografice.
+ */
+
+
+
+
+
+/*------------------------------------*\
+  #SETĂRI
+\*------------------------------------*/
+
+/**
+ * 1. Un model box-sizing mai rezonabil.
+ *
+ * 2. Această regulă modifică valoarea base font-size,
+ * cu care sunt comparate toate unitățile rem.
+ *
+ * 3. Normalize.css setează un top și bottom margin pentru aceste elemente.
+ * care ar interfera cu layout-ul nostru astfel că o suprascriem cu această regulă.
+ *
+ * 4. Trasăm un bottom-margin general principalelor elemente de tipografie
+ * care asigură uniformitatea tuturor marginilor orizontale în mod implicit
+ * în întregul site. Ulterior, în unele cazuri, le putem suprascrie.
+ */
+
+*    { box-sizing: border-box;} /* [1] */
+
+
+html { font-size:  14px; } /* [2] */
+
+
+h2, h6,
+p,
+ul {
+  margin: 0; /* [3] */
+}
+
+
+h2, h6 {
+  margin-bottom: 1.6666vh; /* [4] */
+}
+
+
+a {
+  text-decoration:  none;
+  cursor:           pointer;
+}
+
+
+
+
+
+/*------------------------------------*\
+  #TIPOGRAFIE
+\*------------------------------------*/
+
+body {
+  color:        #211138;
+  font-family:  'Montserrat', sans-serif;
+}
+
+
+h2 { font-size: 4.4444vh; }
