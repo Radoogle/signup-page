@@ -7,9 +7,10 @@
   <meta name="App Sign Up Screen" content="description">
   <title>App Sign Up Screen</title>
   <link rel="stylesheet" href="CSS/normalize.min.css">
-  <link rel="stylesheet" href="CSS/base">
+  <link rel="stylesheet" href="CSS/base.css">
   <link rel="stylesheet" href="CSS/layout.css">
   <link rel="stylesheet" href="CSS/components.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
 </head>
 <body>
   <main class="main">
@@ -23,36 +24,38 @@
     </header>
 
     <section class="left">
-      <div class="container">
+      <div class="left-container">
         <div class="promo">
-          <div class="promo-icon"></div>
-          <h3>Join the community.</h3>
+          <div class="promo__icon"></div>
+          <h2 class="promo__text">Join the community.</h2>
         </div>
         <div class="promo">
-          <div class="promo-icon"></div>
-          <h3>Explore new features.</h3>
+          <div class="promo__icon"></div>
+          <h2 class="promo__text">Explore new features.</h2>
         </div>
         <div class="promo">
-          <div class="promo-icon"></div>
-          <h3>Get incredible results.</h3>
+          <div class="promo__icon"></div>
+          <h2 class="promo__text">Get incredible results.</h2>
         </div>
       </div>
     </section>
 
     <section class="right">
       <div class="form-container">
-        <p class="text">
+        <h1 class="form__text">
           Some catchy call to action text.
-        </p>
-        <form action="">
-          <input type="email">
-          <input type="password">
-        </form>
-        <p class="forget-password">
-          <a href="#"></a>
-        </p>
-        <a href="#" class="btn signup-btn">Sign up</a>
-        <a href="#" class="btn login-btn">log in</a>
+        </h1>
+        <form>
+          <input type="email" placeholder="Login/Email" class="input-field" required>
+          <input type="password" placeholder="Password" class="input-field" required>
+          <div>
+            <p class="forget-password">
+              <a href="#"></a>
+            </p>
+          </div>
+          <input type="submit" value="Sign up" class="btn submit-btn signup">
+          <input type="submit" value="Log in" class="btn submit-btn login">
+      </form>
       </div>
     </section>
 

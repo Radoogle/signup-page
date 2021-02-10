@@ -1,0 +1,45 @@
+/**
+ * OVERVIEW
+ *
+ * This file sets the layout of the page.
+ */ 
+ 
+  
+ /**
+ * CONTENTS
+ *
+ * LAYOUT
+ * Elements.............Rules for the container and items.
+ *
+ */
+
+
+
+
+
+/*------------------------------------*\
+  #ELEMENTS
+\*------------------------------------*/
+
+.header {
+  z-index:  1;
+  position: absolute;
+  top:      0;
+  left:     0;
+}
+
+.main {
+  display:                grid;
+  grid-template-columns:  1fr 1fr;
+  grid-template-areas:    "left   right"; 
+}
+
+.left   { grid-area: left; }
+.right  { grid-area: right; }
+
+.left,
+.right,
+.footer {
+  display: grid;
+  place-items: center;
+}

@@ -1,0 +1,161 @@
+/**
+ * OVERVIEW
+ *
+ * This project is separated to the following style sheets:
+ *
+ * normalize.min.css....CSS reset.
+ * base.css.............Global rules and helpers.
+ * layout.css...........CSS rules that control the layout of the page.
+ * components.css.......Own CSS for the components that build up the page.
+ */
+
+
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Variables............Globally-available variables.
+ * Box-sizing...........Better default `box-sizing`.
+ * Base font sizes......Setting the base font size.
+ * Margins..............Top and bottom margins global values.
+ * Anchors..............Implicit link settings.
+ *
+ * BASE STYLES
+ * Headings.............H2, H6 styles.
+ * Paragraphs...........Base styles.
+ */
+
+
+
+
+/*------------------------------------*\
+  #SETTINGS
+\*------------------------------------*/
+
+/**
+ * 1. Variables for the colors used
+ 
+ * 2. A more rezonable model for box-sizing
+ *
+ * 3. This rule will modify the base font-size,
+ * with whom are compared all rem units.
+ *
+ * 4. Normalize.css sets a margin top and bottom for these elements.
+ * In order not to interfere with our layout, this rule will overwrite the margins.
+ *
+ */
+
+
+
+
+
+/*------------------------------------*\
+  #VARIABLES
+\*------------------------------------*/
+
+:root {
+    --bg-primary:                  #F4F3F5; /* [1] */
+    --bg-secondary:                #FFFFFF;
+    --bg-thirdly:                  #6200EA;
+  
+    --bg-header:                   transparent;
+    --bg-footer:                   #211138;
+  
+    --primary-font-color:          #211138;
+    --secondary-font-color:        #6200EA;
+    --thirdly-font-color:          #FFFFFF;
+  
+    --icon-bg-color:               #000029;
+    
+    --footer-primary-font-color:   #B2ACBA;
+    --footer-secondary-font-color: #6200EA;
+  }
+  
+  
+  
+  
+  
+  /*------------------------------------*\
+    #BOX-SIZING
+  \*------------------------------------*/
+  
+  * { box-sizing: border-box; } /* [2] */
+  
+  
+  
+  
+  
+  /*------------------------------------*\
+    #FONT SIZES
+  \*------------------------------------*/
+  
+  html { font-size: 10px; } /* [3] */
+  
+  h1 { font-size: 4rem; }
+  
+  h2 { font-size: 3rem; }
+  
+  p  { font-size: 1.2rem; }
+  
+  
+  
+  
+  
+  /*------------------------------------*\
+    #MARGINS
+  \*------------------------------------*/
+  
+  h1                          { margin: 0 0 3rem 0; } /* [4] */
+
+  h2                          { margin: 0; }
+  
+  p                           { margin: 0 0 2rem 0; }
+
+  .btn                        { margin: 1rem 0 .5rem 0; }
+  
+  p.footer__copyright         { margin: 0; }
+  
+  
+  
+  
+  
+  /*------------------------------------*\
+    #ANCHORS
+  \*------------------------------------*/
+  
+  a { 
+    text-decoration: none; /* [5] */
+    cursor:          pointer;
+   }
+  
+  
+  
+  
+  
+  /*------------------------------------*\
+    #BASE STYLES
+  \*------------------------------------*/
+  
+  body {
+    font-family:      "Montserrat", sans-serif;
+    color:            var(--primary-font-color);
+    background-color: var(--bg-primary);
+  }
+  
+  h1 {
+    font-weight:      bold;
+    line-height:      5rem;
+    letter-spacing:   0;
+  }
+  
+  h2 {
+    font-weight:      bold;
+    line-height:      4rem;
+    letter-spacing:   0;
+  }
+  
+  p {
+    line-height:      1.5rem;
+    letter-spacing:   .24rem;
+    text-transform:   uppercase;
+  }
