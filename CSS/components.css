@@ -50,12 +50,11 @@
 
 .main { 
   background-color: var(--bg-primary);
-  min-height:       calc(100vh - 10rem); 
+  min-height:       calc(100vh - 10rem);
+  position: relative; 
 }
 
-.left {
-  background-color: var(--bg-thirdly);
-}
+.left             { background-color: var(--bg-thirdly); }
 
 .promo            { margin-bottom: 6rem; }
 
@@ -65,23 +64,30 @@
 
 .promo__text      { color: var(--thirdly-font-color); }
 
-.right {
-  background:     transparent url('../assets/bailey-zindel-396398-unsplash.jpg') 0% 0% no-repeat padding-box;
-  mix-blend-mode: luminosity;
-  background-size: cover;
-  padding:        13rem;
-  /* isolation: isolate; */
-}
+.right            { padding: 13rem; }
 
-/* .form-container { isolation: isolate; } */
+.right::before {
+  content:          "";
+  background-image: url('../assets/bailey-zindel-396398-unsplash.jpg');
+  background-repeat: no-repeat;
+  mix-blend-mode:   luminosity;
+  background-size:  cover;
+  width:            100%;
+  height:           100%;
+  position:         absolute;
+  top:              0;
+  left:             50%;
+  bottom:           10rem;
+}
 
 .form-container {
   background-color: var(--bg-secondary);
   border-radius:    1.5rem;
   padding:          6rem;
+  z-index:          1;
 }
 
-.input-field {
+.form__input-field {
   height:           5rem;
   width:            100%;
   background-color: var(--bg-primary);
@@ -90,20 +96,13 @@
   outline:          none;
   margin-bottom:    1.5rem;
   font-size:        1.4rem;
-  mix-blend-mode: normal;
 }
 
-.input-field:last-of-type {
-  margin-bottom: 1rem;
-}
+.form__input-field:last-of-type { margin-bottom: 1rem; }
 
-.input-field:focus {
-  border-bottom-color: var(--bg-thirdly);
-  /* mix-blend-mode: normal; */
-  /* isolation: isolate; */
-}
+.form__input-field:focus        { border-bottom-color: var(--bg-thirdly); }
 
-.input-field::placeholder {
+.form__input-field::placeholder {
   font-size:    1.4rem;
   font-weight:  bold;
   line-height:  1.8rem;
@@ -112,7 +111,47 @@
   padding:      1.6rem 1.4rem;
 }
 
+.form__forget-password {
+  text-align: right;
+  margin: 0 0 3rem 0;
+  padding: 0;
+}
+
+.form__forget-password-link {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: .24rem;
+  line-height: 1.5rem;
+  font-weight: bold;
+  color: var(--secondary-font-color);
+}
   
+.btn {
+  width:              100%;
+  height:             5rem;
+  border:             .2rem solid var(--secondary-font-color);
+  border-radius:      2.4rem;
+  font-size:          1.2rem;
+  font-weight:        bold;
+  line-height:        1.5rem;
+  letter-spacing:     .24rem;
+  text-transform:     uppercase;
+  text-align:         center;
+  vertical-align:     middle;
+}
+
+.signup-btn {
+  background-color:   var(--secondary-font-color);
+  color:              var(--thirdly-font-color);
+}
+
+.login-btn {
+  background-color: var(--bg-secondary);
+  color:              var(--secondary-font-color);
+}
+
+
+
   /* .contact-info,
   .contact-form {
     background-color: #fff;

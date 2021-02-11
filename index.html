@@ -17,7 +17,7 @@
 
     <header class="header">
       <div class="logo">
-        <a href="#">
+        <a href="index.html">
           <img src="assets/logo_50.svg" alt="logo image">
         </a>
       </div>
@@ -46,15 +46,13 @@
           Some catchy call to action text.
         </h1>
         <form>
-          <input type="email" placeholder="Login/Email" class="input-field" required>
-          <input type="password" placeholder="Password" class="input-field" required>
-          <div>
-            <p class="forget-password">
-              <a href="#"></a>
-            </p>
+          <input type="email" id="email" name="email" placeholder="Login/Email" class="form__input-field" required>
+          <input type="password" id="password" name="password" placeholder="Password" class="form__input-field" required>
+          <div class="form__forget-password">
+              <a href="#" class="form__forget-password-link">Forget password?</a>
           </div>
-          <input type="submit" value="Sign up" class="btn submit-btn signup">
-          <input type="submit" value="Log in" class="btn submit-btn login">
+          <input type="submit" value="Sign up" class="btn signup-btn">
+          <input type="submit" value="Log in" class="btn login-btn">
       </form>
       </div>
     </section>
