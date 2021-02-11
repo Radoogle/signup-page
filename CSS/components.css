@@ -56,15 +56,31 @@
 
 .left             { background-color: var(--bg-thirdly); }
 
-.promo            { margin-bottom: 6rem; }
+.promo { 
+  display:        flex;
+  margin-bottom:  6rem;
+} 
 
 .promo:last-child { margin-bottom: 0; }
 
-.promo__icon      { }
+.promo__icon {
+  width:            4rem;
+  height:           4rem;
+  background-color: var(--bg-secondary);
+  color:            var(--secondary-font-color);
+  border-radius:    50%;
+  font-size:        2rem;
+  margin-right:     2rem;
+  display:          grid;
+  place-items:      center;
+ }
 
-.promo__text      { color: var(--thirdly-font-color); }
+.promo__text { 
+  color:    var(--thirdly-font-color);
+  display:  inline-block; 
+}
 
-.right            { padding: 13rem; }
+.right { padding: 13rem; }
 
 .right::before {
   content:          "";
@@ -113,17 +129,17 @@
 
 .form__forget-password {
   text-align: right;
-  margin: 0 0 3rem 0;
-  padding: 0;
+  margin:     0 0 3rem 0;
+  padding:    0;
 }
 
 .form__forget-password-link {
   text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size:      1.2rem;
   letter-spacing: .24rem;
-  line-height: 1.5rem;
-  font-weight: bold;
-  color: var(--secondary-font-color);
+  line-height:    1.5rem;
+  font-weight:    bold;
+  color:          var(--secondary-font-color);
 }
   
 .btn {
@@ -146,106 +162,14 @@
 }
 
 .login-btn {
-  background-color: var(--bg-secondary);
+  background-color:   var(--bg-secondary);
   color:              var(--secondary-font-color);
 }
+  
+  
+  
+ 
 
-
-
-  /* .contact-info,
-  .contact-form {
-    background-color: #fff;
-    border-radius:    1.5rem;
-    overflow:         auto;
-    padding:          6rem;
-  }
-  
-    .contact-info__map {
-      border-radius:  1.5rem;
-      width:          100%;
-      height:         28rem;
-    }
-  
-    .contact-info__heading { color: var(--secondary-font-color); }
-  
-    .contact-form__text {
-      font-size:    2rem;
-      line-height:  3rem;
-    }
-  
-    .contact-form__title::first-letter { text-transform: uppercase; }
-  
-    .contact-info__link {
-      display:        block;
-      font-size:      1.2rem;
-      font-weight:    bold;
-      line-height:    1.5rem;
-      letter-spacing: .24rem;
-      text-transform: uppercase;
-      margin:         1rem 0 0 0;
-      color:          var(--secondary-font-color);
-    }
-  
-    .contact-info__social-media-link {
-      font-size:        2rem;
-      display:          inline-block;
-      color:            var(--thirdly-font-color);
-      background-color: var(--secondary-font-color);
-      border-radius:    50%;
-      width:            4rem;
-      height:           4rem;
-      line-height:      4rem;
-      text-align:       center;
-      margin-right:     1rem;
-    }
-  
-    .contact-form__input-field {
-      font-size:        1.4rem;
-      line-height:      1.8rem;
-      width:            100%;
-      height:           5rem;
-      color:            var(--primary-font-color);
-      background-color: var(--bg-primary);
-      border:           0;
-      border-bottom:    .3rem solid transparent;
-      padding:          1.6rem 0 1.6rem 2.4rem;
-      margin-bottom:    1.5rem;
-      outline:          none;
-    }
-  
-      .contact-form__input-field:focus { border-bottom-color: var(--secondary-font-color); }
-  
-      .contact-form__input-field::placeholder {
-        font-weight:    bold;
-        opacity:        .25;
-      }
-  
-      .contact-form__input-field--textarea {
-        height:         15rem;
-        display:        block;
-        margin-bottom:  2rem;
-      }
-  
-    .contact-form__submit {
-      width:              100%;
-      height:             5rem;
-      background-color:   var(--secondary-font-color);
-      border:             .2rem solid var(--secondary-font-color);
-      border-radius:      2.4rem;
-      color:              var(--thirdly-font-color);
-      font-size:          1.2rem;
-      font-weight:        bold;
-      line-height:        1.5rem;
-      letter-spacing:     .24rem;
-      text-transform:     uppercase;
-      text-align:         center;
-      vertical-align:     middle;
-    } */
-  
-  
-  
-  
-  
   /*------------------------------------*\
     #FOOTER
   \*------------------------------------*/
